@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: #0f1a14;
+    --color-surface: #1a2a20;
+    --color-surface-hover: #243a2e;
+    --color-border: #2a3f33;
+    --color-text: #e8f0ea;
+    --color-text-muted: #8ba89a;
+    --color-primary: #4ade80;
+    --color-primary-hover: #22c55e;
+    --color-accent: #fbbf24;
+    --color-success: #22c55e;
+    --color-warning: #f59e0b;
+    --color-error: #ef4444;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body, #root {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-muted);
+  }
+
+  input, textarea, button {
+    font-family: inherit;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-150 active:scale-95;
+  }
+  .btn-primary {
+    @apply btn bg-primary text-bg hover:bg-primary-hover;
+  }
+  .btn-ghost {
+    @apply btn text-text-muted hover:text-text hover:bg-surface-hover;
+  }
+  .btn-danger {
+    @apply btn bg-error text-white hover:opacity-90;
+  }
+  .input {
+    @apply w-full px-3 py-2 rounded-lg bg-surface border border-border text-text placeholder:text-text-muted focus:outline-none focus:border-primary transition-colors;
+  }
+  .card {
+    @apply bg-surface border border-border rounded-xl;
+  }
+  .skeleton {
+    @apply bg-surface-hover rounded animate-pulse;
+  }
+}
+
+/* Theme: Forest (default) */
+[data-theme="forest"] {
+  --color-bg: #0f1a14;
+  --color-surface: #1a2a20;
+  --color-surface-hover: #243a2e;
+  --color-border: #2a3f33;
+  --color-text: #e8f0ea;
+  --color-text-muted: #8ba89a;
+  --color-primary: #4ade80;
+  --color-primary-hover: #22c55e;
+  --color-accent: #fbbf24;
+}
+
+/* Theme: Dark */
+[data-theme="dark"] {
+  --color-bg: #0a0a0a;
+  --color-surface: #1a1a1a;
+  --color-surface-hover: #2a2a2a;
+  --color-border: #333333;
+  --color-text: #f0f0f0;
+  --color-text-muted: #888888;
+  --color-primary: #6366f1;
+  --color-primary-hover: #4f46e5;
+  --color-accent: #a78bfa;
+}
+
+/* Theme: Light */
+[data-theme="light"] {
+  --color-bg: #f5f5f5;
+  --color-surface: #ffffff;
+  --color-surface-hover: #e8e8e8;
+  --color-border: #d1d5db;
+  --color-text: #1a1a1a;
+  --color-text-muted: #6b7280;
+  --color-primary: #059669;
+  --color-primary-hover: #047857;
+  --color-accent: #d97706;
+}
+
+/* Theme: Ocean */
+[data-theme="ocean"] {
+  --color-bg: #0c1929;
+  --color-surface: #16263a;
+  --color-surface-hover: #1e3a52;
+  --color-border: #2a4a6a;
+  --color-text: #e0f2fe;
+  --color-text-muted: #7dd3fc;
+  --color-primary: #0ea5e9;
+  --color-primary-hover: #0284c7;
+  --color-accent: #06b6d4;
+}
+
+/* Theme: Sunset */
+[data-theme="sunset"] {
+  --color-bg: #1a0f0a;
+  --color-surface: #2a1a14;
+  --color-surface-hover: #3a241e;
+  --color-border: #4a3028;
+  --color-text: #fef3c7;
+  --color-text-muted: #fbbf24;
+  --color-primary: #f97316;
+  --color-primary-hover: #ea580c;
+  --color-accent: #f43f5e;
+}
+
+/* Theme: Aurora */
+[data-theme="aurora"] {
+  --color-bg: #0a0e1a;
+  --color-surface: #121826;
+  --color-surface-hover: #1a2238;
+  --color-border: #2a3450;
+  --color-text: #d1fae5;
+  --color-text-muted: #67e8f9;
+  --color-primary: #10b981;
+  --color-primary-hover: #059669;
+  --color-accent: #8b5cf6;
+}
+
+/* Theme: Space */
+[data-theme="space"] {
+  --color-bg: #050510;
+  --color-surface: #0f0f20;
+  --color-surface-hover: #1a1a30;
+  --color-border: #2a2a4a;
+  --color-text: #e0e7ff;
+  --color-text-muted: #818cf8;
+  --color-primary: #6366f1;
+  --color-primary-hover: #4f46e5;
+  --color-accent: #ec4899;
+}
+
+/* Theme: Minimal */
+[data-theme="minimal"] {
+  --color-bg: #fafafa;
+  --color-surface: #f0f0f0;
+  --color-surface-hover: #e5e5e5;
+  --color-border: #d4d4d4;
+  --color-text: #1a1a1a;
+  --color-text-muted: #737373;
+  --color-primary: #171717;
+  --color-primary-hover: #404040;
+  --color-accent: #737373;
+}
+
+/* Reduced motion */
+.reduced-motion * {
+  animation-duration: 0.01ms !important;
+  transition-duration: 0.01ms !important;
+}
